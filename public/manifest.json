@@ -1,0 +1,29 @@
+{
+  "name": "Chanakya Yuvak Mandal • Kadalagi Khoot",
+  "short_name": "CYM",
+  "description": "Official Heritage Website of Chanakya Yuvak Mandal (CYM), Kadalagi Khoot, Yamakanmardi. Est. 2019. Annual Ganesh Utsav archives, youth seva & community history.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#1B0F0A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+rules_version = '2';
+
+// =============================================================================
+// CHANAKYA YUVAK MANDAL (CYM) - PERMANENT PRODUCTION STORAGE RULES
+// ZERO-TRUST LIFETIME SECURITY: Only authorized committee email can write
+// =============================================================================
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      // Allow all visitors to view public assets
+      allow read: if true;
+      // Allow only authorized administrator to upload/delete files
+      allow write: if request.auth != null &&
+        request.auth.token.email.lower() == 'chanakyayuvakmandal2019@gmail.com';
+    }
+  }
+}

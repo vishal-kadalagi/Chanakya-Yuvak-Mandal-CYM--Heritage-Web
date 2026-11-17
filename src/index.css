@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+    color: #111111;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+    color: #111111;
+  }
+
+  /* Minimalist Gray Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFFFFF;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E5E7EB;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E5A812;
+  }
+}
+
+/* Portfolio Card Hover (as in "Explore My Work" in reference design) */
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #181818;
+  border-radius: 0.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.15);
+}
+
+/* Yellow Accent Line Indicator */
+.accent-line-heading {
+  position: relative;
+  padding-top: 1.25rem;
+}
+
+.accent-line-heading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 46px;
+  height: 3.5px;
+  background-color: #E5A812;
+  border-radius: 2px;
+}
+
+/* Circular Rotating Stamp */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinUltraSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-spin-ultra-slow {
+  animation: spinUltraSlow 120s linear infinite;
+  will-change: transform;
+}
+
+/* Kannada Script Precision Refinements */
+[lang="kn"], .font-kannada {
+  line-height: 1.6;
+  letter-spacing: normal !important;
+}
+
+/* Animated Side Rails Motion (Continuous Hardware-Accelerated 60fps Loop) */
+@keyframes railScrollUp {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes railScrollDown {
+  0% { transform: translate3d(0, -50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-rail-up,
+.animate-rail-down {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.animate-rail-up {
+  animation: railScrollUp 40s linear infinite;
+}
+
+.animate-rail-down {
+  animation: railScrollDown 40s linear infinite;
+}
+
+/* 35mm Cinema Film Reel Continuous Motion (Silky GPU-Accelerated Loop) */
+@keyframes filmReelScroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-film-reel {
+  display: flex;
+  width: max-content;
+  animation: filmReelScroll 75s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.animate-film-reel:hover,
+.film-reel-paused {
+  animation-play-state: paused !important;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+

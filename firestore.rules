@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// =============================================================================
+// CHANAKYA YUVAK MANDAL (CYM) - PERMANENT PRODUCTION FIRESTORE RULES
+// LIFETIME VALIDITY: No expiration dates (NEVER EXPIRES)
+// =============================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function: Check if current user is the strictly authorized CYM administrator
+    function isCymAdmin() {
+      return request.auth != null &&
+        request.auth.token.email.lower() == 'chanakyayuvakmandal2019@gmail.com';
+    }
+
+    // =========================================================================
+    // 1. PUBLIC DEVOTEE COLLECTIONS (Read: Worldwide / Write: Admin Only)
+    // =========================================================================
+
+    // Media Library (Hero slides, 35mm reel, Darshan Gallery, History, Seva photos/videos)
+    match /media_items/{id} {
+      allow read: if true;
+      allow write: if isCymAdmin();
+    }
+
+    // Committee Members (Presidents, Youth Leaders, Advisors)
+    match /committee_members/{id} {
+      allow read: if true;
+      allow write: if isCymAdmin();
+    }
+
+    // Festival History Milestones (Yearly archives from 2019 onwards)
+    match /history_milestones/{id} {
+      allow read: if true;
+      allow write: if isCymAdmin();
+    }
+
+    // Seva & Achievements (Annasantarpane, Clay Murti records, awards)
+    match /achievements_items/{id} {
+      allow read: if true;
+      allow write: if isCymAdmin();
+    }
+
+    // Global Site Settings & YouTube Live Stream Configuration
+    match /site_settings/{id} {
+      allow read: if true;
+      allow write: if isCymAdmin();
+    }
+
+    // =========================================================================
+    // 2. ZERO-TRUST FALLBACK CATCH-ALL (Read: Public / Write: Denied Worldwide)
+    // =========================================================================
+    match /{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
