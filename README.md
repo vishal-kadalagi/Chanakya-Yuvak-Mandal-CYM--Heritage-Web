@@ -50,7 +50,7 @@
   - [6. Executive Committee & Youth Leadership](#6-executive-committee--youth-leadership)
   - [7. Community Seva & Maha Annasantarpane](#7-community-seva--maha-annasantarpane)
   - [8. Contact, Headquarters & Satellite Map](#8-contact-headquarters--satellite-map)
-  - [9. Secure Admin Control Center](#9-secure-admin-control-center)
+  - [9. Secure Admin Portal & Control Dashboard](#9-secure-admin-portal--control-dashboard)
 - [🛠 Tech Stack & Engineering Highlights](#-tech-stack--engineering-highlights)
 - [📂 Repository Structure](#-repository-structure)
 - [🚀 Quick Start & Installation](#-quick-start--installation)
@@ -153,10 +153,16 @@ All screenshots are stored in the dedicated [`screenshots/`](./screenshots) dire
 
 ---
 
-### 9. Secure Admin Control Center
-*Protected administrative portal featuring multi-media batch uploading, client-side video downscaling, hero priority ranking, and YouTube Live Stream management.*
+### 9. Secure Admin Portal & Control Dashboard
+*Protected administrative command center featuring multi-media batch uploading, client-side video downscaling, hero priority ranking, and YouTube Live Stream management. All administrative captures are archived in [`admin_screenshots/`](./admin_screenshots) and [`screenshots/admin/`](./screenshots/admin).*
 
+#### 🔐 Admin Security & Role-Based Entry Gate
 ![09_admin_portal](screenshots/09_admin_portal.png)
+
+#### 🎛️ Real-Time Admin Command Dashboard
+*Live administrative control over 150+ Cloudinary media items, 23 hero loops, 131 film reel frames, and 150 photo gallery archives.*
+
+![10_admin_dashboard](screenshots/10_admin_dashboard.png)
 
 ---
 
@@ -180,7 +186,12 @@ All screenshots are stored in the dedicated [`screenshots/`](./screenshots) dire
 ## 📂 Repository Structure
 
 ```
+├── admin_screenshots/               # Dedicated admin command dashboard showcase
+│   ├── admin_dashboard.png          # Real-time media & website control center
+│   ├── admin_login.png              # Security authentication gate
+│   └── README.md                    # Admin panel overview & features
 ├── screenshots/                     # High-resolution screenshots of live platform
+│   ├── admin/                       # Admin portal visual assets
 │   ├── 01_home_hero.png
 │   ├── 02_35mm_reel.png
 │   ├── 03_about_heritage.png
@@ -189,7 +200,8 @@ All screenshots are stored in the dedicated [`screenshots/`](./screenshots) dire
 │   ├── 06_committee_leadership.png
 │   ├── 07_seva_achievements.png
 │   ├── 08_contact_location.png
-│   └── 09_admin_portal.png
+│   ├── 09_admin_portal.png
+│   └── 10_admin_dashboard.png
 ├── public/                          # Static assets served at root
 │   ├── assets/
 │   │   ├── logo_transparent.png     # Official CYM transparent emblem
